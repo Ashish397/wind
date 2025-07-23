@@ -21,7 +21,7 @@ def get_args():
     parser.add_argument('--variant', default='diffusion_transformer_768p', type=str,)
     parser.add_argument('--task', default='t2v', type=str, choices=['i2v', 't2v'])
     parser.add_argument('--temp', default=16, type=int, help='The generated latent num, num_frames = temp * 8 + 1')
-    parser.add_argument('--sp_group_size', default=2, type=int, help="The number of gpus used for inference, should be 2 or 4")
+    parser.add_argument('--sp_group_size', default=1, type=int, help="The number of gpus used for inference, should be 2 or 4")
     parser.add_argument('--sp_proc_num', default=-1, type=int, help="The number of process used for video training, default=-1 means using all process.")
 
     return parser.parse_args()

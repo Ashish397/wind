@@ -696,6 +696,7 @@ class PyramidDiTForVideoGeneration:
 
     def sample_block_noise(self, bs, ch, temp, height, width):
         gamma = self.scheduler.config.gamma
+        gamma = min(gamma, 0.24)
         dist = torch.distributions.multivariate_normal.MultivariateNormal(torch.zeros(4), torch.eye(4) * (1 + gamma) - torch.ones(4, 4) * gamma)
         block_number = bs * ch * temp * (height // 2) * (width // 2)
         noise = torch.stack([dist.sample() for _ in range(block_number)]) # [block number, 4]

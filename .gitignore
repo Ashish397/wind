@@ -1,3 +1,14 @@
+#Obvious
+LICENSE
+pyramid_flow_miniflux/
+venv/
+docs/
+__pycache__/
+*.txt
+*.md
+*.ipynb
+*.mp4
+
 # Xcode
 .DS_Store
 .idea
